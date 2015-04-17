@@ -11,14 +11,20 @@ $(document).ready(function(){
   $("form#pizzaform").submit(function(event){
     event.preventDefault();
 
-	 var newPizzaPrice= Object.create(PizzaPrice);
-	 newPizzaPrice.extraCheese=parseInt($("select#cheese").val());
-	 newPizzaPrice.pepperoni=parseInt($("select#pepperoni").val());
-	 newPizzaPrice.veggie=parseInt($("select#veggie").val());
-     console.log(newPizzaPrice.extraCheese);
-     newPizzaPrice.finalprice();
+	  var newPizzaPrice= Object.create(PizzaPrice);
+	   var cheese = $("select#cheese").val();
+	   var pepperoni= $("select#pepperoni").val();
+	 
+	  newPizzaPrice.extraCheese=cheese;
+	  newPizzaPrice.pepperoni= pepperoni;
 
-     $(".finalPrice").text(newPizzaPrice.basicPizza);
+	 // newPizzaPrice.veggie=parseInt($("select#veggie").val());
+     
+      newPizzaPrice.finalprice();
+      var endPrice= newPizzaPrice.basicPizza;
+  
+
+     $(".finalPrice").text(endPrice);
 
 
 });
