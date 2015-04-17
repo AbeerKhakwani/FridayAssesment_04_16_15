@@ -7,8 +7,19 @@ var PizzaPrice = {
             this.basicPizza= this.basicPizza+this.extraCheese+this.pepperoni+this.veggie;
 	    }
 };
+$(document).ready(function(){
+  $("form#pizzaform").submit(function(event){
+    event.preventDefault();
 
- var newPizzaPrice= Object.create(PizzaPrice);
- newPizzaPrice.extraCheese=$("input#cheese").val();
- newPizzaPrice.pepperoni=$("input#pepperoni").val();
- newPizzaPrice.veggie=$("input#veggie").val();
+	 var newPizzaPrice= Object.create(PizzaPrice);
+	 newPizzaPrice.extraCheese=parseInt($("select#cheese").val());
+	 newPizzaPrice.pepperoni=parseInt($("select#pepperoni").val());
+	 newPizzaPrice.veggie=parseInt($("select#veggie").val());
+     console.log(newPizzaPrice.extraCheese);
+     newPizzaPrice.finalprice();
+
+     $(".finalPrice").text(newPizzaPrice.basicPizza);
+
+
+});
+  });
