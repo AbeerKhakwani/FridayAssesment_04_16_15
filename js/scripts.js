@@ -7,4 +7,8 @@ var PizzaPrice = {
             this.basicPizza= this.basicPizza+this.extraCheese+this.pepperoni+this.veggie;
 	    }
 };
- 
+
+ var newPizzaPrice= Object.create(PizzaPrice);
+ newPizzaPrice.extraCheese=$("input#cheese").val();
+ newPizzaPrice.pepperoni=$("input#pepperoni").val();
+ newPizzaPrice.veggie=$("input#veggie").val();
