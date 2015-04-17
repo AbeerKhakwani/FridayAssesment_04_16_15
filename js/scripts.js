@@ -6,14 +6,14 @@ var PizzaPrice = {
 };
 $(document).ready(function(){
   $('form#pizzaForm').submit(function(event){
-  	
+
        event.preventDefault();
   
     var price = parseInt($("select#type").val());
     console.log(price);
     var pizza = Object.create(PizzaPrice);
      pizza.finalprice(price);
-    $(".finalPrice").text(pizza.basicPizza);
+    $(".finalPrice").text(pizza.basicPizza.toFixed(2));
 
 
    

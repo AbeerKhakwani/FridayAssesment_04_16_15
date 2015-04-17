@@ -1,5 +1,5 @@
-# Name:
-# Date:
+# Name:Abeer Khakwani
+# Date:4/16/2015
 
 Description:
 
@@ -7,7 +7,7 @@ Description:
 In order to use this program you will need a browser...NOT IE!
 
 SetUp
-1.
+1.Clone this repo onto your computor and run the htmldoc.html in your browser.
 
 # Copyright (c) 2015 (Name)
 
