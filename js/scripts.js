@@ -1,20 +1,18 @@
 var PizzaPrice = {
 	        basicPizza:10,
-	        addOn:0,
-	        finalprice: function(){
-            this.basicPizza= this.basicPizza+this.addOn;
+	        finalprice: function(addOn){
+            this.basicPizza= this.basicPizza+ addOn;
 	    }
 };
 $(document).ready(function(){
-  $('form#ticketmaster').submit(function(event){
-    event.preventDefault();
-
+  $('form#pizzaForm').submit(function(event){
+  	
+       event.preventDefault();
+  
     var price = parseInt($("select#type").val());
-    
+    console.log(price);
     var pizza = Object.create(PizzaPrice);
-
-    pizza.addOn =  price;
-    pizza.finalprice();
+     pizza.finalprice(price);
     $(".finalPrice").text(pizza.basicPizza);
 
 
