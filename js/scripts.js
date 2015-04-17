@@ -1,31 +1,24 @@
 var PizzaPrice = {
 	        basicPizza:10,
-	        extraCheese: 0,
-	        pepperoni: 0,
-	        veggie:0,
-	       finalprice: function(){
-            this.basicPizza= this.basicPizza+this.extraCheese+this.pepperoni+this.veggie;
+	        addOn:0,
+	        finalprice: function(){
+            this.basicPizza= this.basicPizza+this.addOn;
 	    }
 };
 $(document).ready(function(){
-  $("form#pizzaform").submit(function(event){
+  $('form#ticketmaster').submit(function(event){
     event.preventDefault();
 
-	  var newPizzaPrice= Object.create(PizzaPrice);
-	   var cheese = $("select#cheese").val();
-	   var pepperoni= $("select#pepperoni").val();
-	 
-	  newPizzaPrice.extraCheese=cheese;
-	  newPizzaPrice.pepperoni= pepperoni;
+    var price = parseInt($("select#type").val());
+    
+    var pizza = Object.create(PizzaPrice);
 
-	 // newPizzaPrice.veggie=parseInt($("select#veggie").val());
-     
-      newPizzaPrice.finalprice();
-      var endPrice= newPizzaPrice.basicPizza;
-  
+    pizza.addOn =  price;
+    pizza.finalprice();
+    $(".finalPrice").text(pizza.basicPizza);
 
-     $(".finalPrice").text(endPrice);
 
+   
+  });
 
 });
-  });
