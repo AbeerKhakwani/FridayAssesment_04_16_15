@@ -9,7 +9,7 @@ describe("PizzaPrice", function() {
   describe("pepperoni", function() {
     it("subtracts the amount from the finalPrice and returns 15 for pepperoni", function() {
       var testPizzaPrice = Object.create(PizzaPrice);
-      testPizzaPrice.pepperoni=5;
+      testPizzaPrice.addOn=5;
         testPizzaPrice.finalprice();
       expect(testPizzaPrice.basicPizza).to.equal(15);
     });
@@ -17,7 +17,7 @@ describe("PizzaPrice", function() {
    describe("cheese", function() {
     it("subtracts the amount from the finalPrice and returns 13 for cheese", function() {
       var testPizzaPrice = Object.create(PizzaPrice);
-       testPizzaPrice.extraCheese=3;
+       testPizzaPrice.addOn=3;
         testPizzaPrice.finalprice();
       expect(testPizzaPrice.basicPizza).to.equal(13);
     });
@@ -25,7 +25,7 @@ describe("PizzaPrice", function() {
     describe("veggie", function() {
     it("subtracts the amount from the finalPrice and returns 15 for veggie", function() {
       var testPizzaPrice = Object.create(PizzaPrice);
-       testPizzaPrice.veggie=5;
+       testPizzaPrice.addOn=5;
         testPizzaPrice.finalprice();
       expect(testPizzaPrice.basicPizza).to.equal(15);
     });
